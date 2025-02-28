@@ -10,7 +10,6 @@ G1 = (V1,E1) # Graph consisting of vertices V1 and edges E1
 # (b) Create a function called calculateDegree, that calculates the degree of the
 # vertices in a graph. The return type should either be an array of integers or a
 # dictionary
-
 def calculateDegree(V, E):
     counts = {}
     # Initialize counts dictionary
