@@ -1,3 +1,6 @@
+import numpy as np
+
+
 # Exercise 1
 # (a) Create a graph G1 = (V1,E1)
 V1 = ["a","b","c","d","e"] # Vertices
@@ -33,4 +36,24 @@ def outputDegreeSequence(D):
     print(converted_degrees)
 
 # Test the function outputDegreeSequence
-print(outputDegreeSequence(calculateDegree(V1, E1)))
+outputDegreeSequence(calculateDegree(V1, E1))
+
+# Exercise 2
+# Create a function which outputs the Adjacency Matrix of a Graph. The output should be
+# a numpy matrix (so at the start use import numpy as np).
+def outputAdjacencyMatrix(V, E):
+    # Create an empty matrix
+    m = np.zeros((len(V), len(V)))
+    # Fill the matrix with 1s where there is an edge
+    for e in E:
+        # Find the index of the vertices in the edge
+        i = V.index(list(e)[0])
+        j = V.index(list(e)[1])
+        # Fill the matrix with 1s
+        m[i][j] = 1
+        m[j][i] = 1
+    # Return the matrix
+    return np.matrix(m)
+
+# Test the function outputAdjacencyMatrix
+print(outputAdjacencyMatrix(V1, E1))
