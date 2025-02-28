@@ -57,3 +57,18 @@ def outputAdjacencyMatrix(V, E):
 
 # Test the function outputAdjacencyMatrix
 print(outputAdjacencyMatrix(V1, E1))
+
+# Exercise 3
+# Create a function which takes a list of vertices and an adjacency matrix, and outputs a
+# list of edges.
+def outputListOfEdges(V, M):
+    E = []
+    for i in range(len(M)):
+        for j in range(i, len(M)):
+            # Check if the element at position [i,j] equals 1
+            if M[i,j] == 1:
+                E.append((V[i], V[j]))
+    return E
+
+# Test the function outputListOfEdges
+print(outputListOfEdges(V1, outputAdjacencyMatrix(V1, E1)))
